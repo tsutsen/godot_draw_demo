@@ -1,22 +1,21 @@
 
-# What
-
-This is a simple demo godot project to implement draw/eraser/undo tool on top of a background image (TextureRect), where you can erase pixels without affecting the background TextureRect.
+This is a small demo project to implement simple vector drawing in Godot. It uses Line2D and CanvasGroup nodes. This demo also has an erase/undo tool and supports brush softness.
 
 ![Screenshot](screenshots/screenshot.png)
 
-# Why
+# What's in it
 
-When I try to implement draw tool using Line2D objects, it is not very obvious how to implement eraser tool to clear part of the pixels drawn. Simply setting another Line2D with color alpha = 0 doesn't work. See [discussion of this godot issue](https://github.com/godotengine/godot/issues/10255). 
+Thanks to [StarryAlley](https://github.com/starryalley/godot-draw-eraser-demo) for original repo! The modifications I've made in my fork:
 
-This project uses a Viewport to achieve the goal so we can easily implement draw/eraser tool.
+- Replaced Subviewport with a [CanvasGroup](https://docs.godotengine.org/en/stable/classes/class_canvasgroup.html) node. It should reduce the number of draw calls
+- Added "brush softness" i.e. a Gaussian blur shader applied to CanvasGroup
+- Simplified the code a bit and added some buttons
 
-The undo functionality is just as easy as deleting the last created Line2D object.
+# Things to improve
 
-# Usage
+- Add Line2D smoothing using Beziers
+- Improve blur shader quality and/or efficiency
+- Clean up some jankiness in input handling and `undo_last()` function
+- Measure the maximum number of Line2D points Godot can handle (and come up with a caching solution if needed)
+- Test and improve multiple brush softness support (I have a temporary solution in the project but I commented it out for now)
 
-There are 3 modes, draw/eraser/undo. Switch mode by _right clicking_ on the whole canvas.
-
-- draw: default mode. Hold left button and drag to draw as usual. Color is random.
-- eraser: same as draw, hold left button and drag to erase as you want.
-- undo: left click to undo the last stroke. 
