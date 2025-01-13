@@ -87,9 +87,11 @@ func _on_softness_changed(value: float) -> void:
 
 func _on_brush_button_pressed() -> void:
 	current_mode = MODE.DRAW
+	mode_label.text = "DRAW MODE"
 
 func _on_eraser_button_pressed() -> void:
 	current_mode = MODE.ERASE
+	mode_label.text = "ERASE MODE"
 
 func _on_undo_button_pressed() -> void:
 	undo_last()

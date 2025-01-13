@@ -1,10 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736802476
+::res://::1736806154
 blur.tres::ShaderMaterial::5425886179617563134::1736800568::0::1::::<><>::
-DrawPanel.gd::GDScript::-1::1736802289::0::1::::<>Control<>::
-draw_panel.tscn::PackedScene::4254129770165531892::1736802411::0::1::::<><>::res://DrawPanel.gd<>uid://c26bs6fioxukr::::res://icon.svg<>uid://6jobfa2qxg1e::::res://DrawPanel.tscn
+draw_panel.gd::GDScript::-1::1736804773::0::1::::<>Panel<>::
+draw_panel.tscn::PackedScene::4254129770165531892::1736805340::0::1::::<><>::res://draw_panel.gd<>uid://c26bs6fioxukr::::res://icon.svg<>uid://6jobfa2qxg1e::::res://line_group.tscn
 icon.svg::CompressedTexture2D::6732030353602980237::1736628079::1736799751::1::::<><>::
 line_group.tscn::PackedScene::2195285640123977640::1736802412::0::1::::<><>::uid://cjkls14hj6xwo::::res://blur.tres
-README.md::TextFile::-1::1736799695::0::1::::<><>::
-wendouree.jpg::CompressedTexture2D::4467775249015531787::1736799695::1736799714::1::::<><>::
-width_curve.tres::Curve::5646994375998312442::1736794927::0::1::::<><>::
+README.md::TextFile::-1::1736802976::0::1::::<><>::
+width_curve.tres::Curve::5646994375998312442::1736805340::0::1::::<><>::

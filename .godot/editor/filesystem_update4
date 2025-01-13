@@ -1,9 +1,4 @@
-res://Node2D.tscn
-res://blur.tres
-res://Node2D.gd
 res://line_group.tscn
-res://DrawPanel.tscn
-res://draw_panel.tscn
+res://blur.tres
 res://draw_panel.gd
-res://README.md
-res://width_curve.tres
+res://draw_panel.tscn

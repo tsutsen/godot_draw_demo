@@ -55,8 +55,7 @@ grow_vertical = 2
 [node name="ModeLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "DRAW MODE
-Right click to switch"
+text = "DRAW MODE"
 
 [node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
 layout_mode = 2
