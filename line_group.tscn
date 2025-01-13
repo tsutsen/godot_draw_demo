@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://6jobfa2qxg1e"]
+
+[ext_resource type="Material" uid="uid://cjkls14hj6xwo" path="res://blur.tres" id="1_8c8dt"]
+
+[node name="LineGroup" type="CanvasGroup"]
+material = ExtResource("1_8c8dt")

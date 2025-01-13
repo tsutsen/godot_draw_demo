@@ -20,5 +20,3 @@ There are 3 modes, draw/eraser/undo. Switch mode by _right clicking_ on the whol
 - draw: default mode. Hold left button and drag to draw as usual. Color is random.
 - eraser: same as draw, hold left button and drag to erase as you want.
 - undo: left click to undo the last stroke. 
-
-

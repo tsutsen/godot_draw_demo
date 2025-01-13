@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1uy5prxbotw3"]
+
+[ext_resource type="Script" path="res://draw_panel.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c26bs6fioxukr" path="res://icon.svg" id="2_clrj7"]
+[ext_resource type="PackedScene" uid="uid://6jobfa2qxg1e" path="res://line_group.tscn" id="3_sy1j3"]
+
+[node name="DrawPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.0588235)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_clrj7")
+expand_mode = 1
+
+[node name="Lines" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 3
+
+[node name="LineGroup" parent="Lines" instance=ExtResource("3_sy1j3")]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.268
+anchor_bottom = 1.0
+offset_right = 0.263977
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModeLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "DRAW MODE
+Right click to switch"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Choose brush color"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "brush color"
+color = Color(1, 1, 1, 1)
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Choose thickness"
+
+[node name="ThicknessSpinBox" type="SpinBox" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+value = 15.0
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Choose softness"
+
+[node name="SoftnessSpinbox" type="SpinBox" parent="Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BrushButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Brush"
+
+[node name="EraserButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Eraser"
+
+[node name="UndoButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "< Undo"
+
+[connection signal="color_changed" from="Panel/VBoxContainer/GridContainer/ColorPickerButton" to="." method="_on_color_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/ThicknessSpinBox" to="." method="_on_thickness_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/SoftnessSpinbox" to="." method="_on_softness_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/BrushButton" to="." method="_on_brush_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/EraserButton" to="." method="_on_eraser_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/UndoButton" to="." method="_on_undo_button_pressed"]
